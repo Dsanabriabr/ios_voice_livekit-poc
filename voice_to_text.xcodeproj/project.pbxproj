@@ -45,6 +45,11 @@
 			path = voice_to_textUITests;
 			sourceTree = "<group>";
 		};
+		E0C3E11A2FD6AF9C00724AA3 /* Helpers */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +80,7 @@
 		E0C3E0E72FD6A95E00724AA3 = {
 			isa = PBXGroup;
 			children = (
+				E0C3E11A2FD6AF9C00724AA3 /* Helpers */,
 				E0C3E0F22FD6A95E00724AA3 /* voice_to_text */,
 				E0C3E1002FD6A96000724AA3 /* voice_to_textTests */,
 				E0C3E10A2FD6A96000724AA3 /* voice_to_textUITests */,
@@ -109,6 +115,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				E0C3E0F22FD6A95E00724AA3 /* voice_to_text */,
+				E0C3E11A2FD6AF9C00724AA3 /* Helpers */,
 			);
 			name = voice_to_text;
 			packageProductDependencies = (

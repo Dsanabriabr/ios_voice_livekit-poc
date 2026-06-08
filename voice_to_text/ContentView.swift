@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var activeTab: CustomTab = .home
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            HStack(spacing: 10) {
+                GeometryReader {
+                    CustomTabBar(size: $0.size, activeTab: $activeTab) {
+                        tab in
+                        
+                    }
+                }
+            }
+            .frame(height: 55)
         }
-        .padding()
+        .padding(.horizontal, 20)
     }
 }
 

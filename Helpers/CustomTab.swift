@@ -5,24 +5,26 @@
 //  Created by Daniel Sanabria on 08/06/26.
 //
 
+import SwiftUI
+
 enum CustomTab: String, CaseIterable {
     case home = "Home"
-    case chats = "Chats"
+    case chats = "Chat Sparky"
     case inventory = "Inventory"
     
     var symbol: String {
         switch self {
-        case .home: return "house"
-        case .chats: return "chat"
-        case .inventory: return "board"
+        case .home: return "house.fill"
+        case .chats: return "star.bubble.fill"
+        case .inventory: return "square.split.bottomrightquarter.fill"
         }
     }
     
     var actionSymbol: String {
         switch self {
-        case .home: return "house"
-        case .chats: return "chat"
-        case .inventory: return "board"
+        case .home: return "plus"
+        case .chats: return "mic"
+        case .inventory: return "barcode.viewfinder"
         }
     }
     

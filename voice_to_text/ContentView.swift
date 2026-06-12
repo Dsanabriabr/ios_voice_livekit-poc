@@ -9,10 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var coordinator: AppCoordinator
-    @State private var activeTab: CustomTab = .home
     @State private var isTabA: Bool = true
     var body: some View {
-        TabView(selection: $activeTab) {
+        TabView(selection: $coordinator.activeTab) {
             Tab.init(value: .home) {
                 Text("Home")
                     .toolbarVisibility(.hidden, for: .tabBar)
@@ -20,25 +19,11 @@ struct ContentView: View {
             Tab.init(value: .chats) {
                 LiveContentView()
                     .toolbarVisibility(.hidden, for: .tabBar)
-                    .environmentObject(coordinator)
             }
             Tab.init(value: .inventory) {
                 Text("Inventory")
                     .toolbarVisibility(.hidden, for: .tabBar)
             }
-        }.onReceive(
-            
-            NotificationCenter.default.publisher(
-
-                for: .startLiveKitSession
-
-            )
-
-        ) { _ in
-            Task { @MainActor in
-                coordinator.startSession()
-            }
-
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             CustomTabBarView()
@@ -52,7 +37,7 @@ struct ContentView: View {
             HStack(spacing: 10) {
                 GeometryReader {
                     if isTabA {
-                        CustomTabBar(size: $0.size, activeTab: $activeTab) {
+                        CustomTabBar(size: $0.size, activeTab: $coordinator.activeTab) {
                             tab in
                             VStack(spacing: 3) {
                                 Image(systemName: tab.symbol)
@@ -66,7 +51,7 @@ struct ContentView: View {
                         }
                         .glassEffect(.regular.interactive(), in: .capsule)
                     } else {
-                        CustomTabBar2(size: $0.size, activeTab: $activeTab)
+                        CustomTabBar2(size: $0.size, activeTab: $coordinator.activeTab)
                             .overlay {
                                 HStack(spacing: 0) {
                                     ForEach(CustomTab.allCases, id: \.rawValue) { tab in
@@ -78,11 +63,11 @@ struct ContentView: View {
                                                 .fontWeight(.medium)
                                         }
                                         .symbolVariant(.fill)
-                                        .foregroundStyle(activeTab == tab ? .teal : .primary)
+                                        .foregroundStyle(coordinator.activeTab == tab ? .teal : .primary)
                                         .frame(maxWidth: .infinity)
                                     }
                                 }
-                                .animation(.easeInOut(duration: 0.25), value: activeTab)
+                                .animation(.easeInOut(duration: 0.25), value: coordinator.activeTab)
                             }
                             .glassEffect(.regular.interactive(), in: .capsule)
                     }
@@ -93,12 +78,12 @@ struct ContentView: View {
                         tab in
                         Image(systemName: tab.actionSymbol)
                             .font(.system(size: 22, weight: .medium))
-                            .blurFade(activeTab == tab)
+                            .blurFade(coordinator.activeTab == tab)
                     }
                 }
                 .frame(width: 55, height: 55)
                 .glassEffect(.regular.interactive(), in: .capsule)
-                .animation(.smooth(duration: 0.55, extraBounce: 0), value: activeTab)
+                .animation(.smooth(duration: 0.55, extraBounce: 0), value: coordinator.activeTab)
             }
         }
         .frame(height: 55)

@@ -17,7 +17,7 @@ struct ContentView: View {
                     .toolbarVisibility(.hidden, for: .tabBar)
             }
             Tab.init(value: .chats) {
-                Text("Chats")
+                LiveContentView()
                     .toolbarVisibility(.hidden, for: .tabBar)
             }
             Tab.init(value: .inventory) {

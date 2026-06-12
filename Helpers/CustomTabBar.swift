@@ -16,7 +16,11 @@ struct CustomTabBar<TabItemView: View> : UIViewRepresentable {
     @ViewBuilder var tabItemView: (CustomTab) -> TabItemView
     
     func updateUIView(_ uiView: UISegmentedControl, context: Context) {
-        
+        context.coordinator.parent = self
+        let index = activeTab.index
+        if uiView.selectedSegmentIndex != index {
+            uiView.selectedSegmentIndex = index
+        }
     }
     
     func makeCoordinator() -> Coordinator {

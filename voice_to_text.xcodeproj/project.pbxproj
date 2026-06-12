@@ -35,6 +35,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		E01DB40C2FDBC89F000839E8 /* AppIntent */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AppIntent;
+			sourceTree = "<group>";
+		};
 		E03757CD2FDAD69B00152747 /* LiveKit */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = LiveKit;
@@ -92,6 +97,7 @@
 		E0C3E0E72FD6A95E00724AA3 = {
 			isa = PBXGroup;
 			children = (
+				E01DB40C2FDBC89F000839E8 /* AppIntent */,
 				E03757CD2FDAD69B00152747 /* LiveKit */,
 				E0C3E11A2FD6AF9C00724AA3 /* Helpers */,
 				E0C3E0F22FD6A95E00724AA3 /* voice_to_text */,
@@ -127,6 +133,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				E01DB40C2FDBC89F000839E8 /* AppIntent */,
 				E03757CD2FDAD69B00152747 /* LiveKit */,
 				E0C3E0F22FD6A95E00724AA3 /* voice_to_text */,
 				E0C3E11A2FD6AF9C00724AA3 /* Helpers */,
@@ -428,6 +435,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "voice-to-text-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Spark;
 				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) uses your camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "$(PRODUCT_NAME) uses your microphone";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -464,6 +472,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "voice-to-text-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Spark;
 				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) uses your camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "$(PRODUCT_NAME) uses your microphone";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

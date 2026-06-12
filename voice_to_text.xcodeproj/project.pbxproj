@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E0BF57852FDAE05E00983F91 /* LiveKit in Frameworks */ = {isa = PBXBuildFile; productRef = E0BF57842FDAE05E00983F91 /* LiveKit */; };
+		E0BF57882FDAE2E200983F91 /* LiveKitComponents in Frameworks */ = {isa = PBXBuildFile; productRef = E0BF57872FDAE2E200983F91 /* LiveKitComponents */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E0C3E0FE2FD6A96000724AA3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -30,6 +35,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		E03757CD2FDAD69B00152747 /* LiveKit */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LiveKit;
+			sourceTree = "<group>";
+		};
 		E0C3E0F22FD6A95E00724AA3 /* voice_to_text */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = voice_to_text;
@@ -57,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0BF57852FDAE05E00983F91 /* LiveKit in Frameworks */,
+				E0BF57882FDAE2E200983F91 /* LiveKitComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +92,7 @@
 		E0C3E0E72FD6A95E00724AA3 = {
 			isa = PBXGroup;
 			children = (
+				E03757CD2FDAD69B00152747 /* LiveKit */,
 				E0C3E11A2FD6AF9C00724AA3 /* Helpers */,
 				E0C3E0F22FD6A95E00724AA3 /* voice_to_text */,
 				E0C3E1002FD6A96000724AA3 /* voice_to_textTests */,
@@ -114,11 +127,14 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				E03757CD2FDAD69B00152747 /* LiveKit */,
 				E0C3E0F22FD6A95E00724AA3 /* voice_to_text */,
 				E0C3E11A2FD6AF9C00724AA3 /* Helpers */,
 			);
 			name = voice_to_text;
 			packageProductDependencies = (
+				E0BF57842FDAE05E00983F91 /* LiveKit */,
+				E0BF57872FDAE2E200983F91 /* LiveKitComponents */,
 			);
 			productName = voice_to_text;
 			productReference = E0C3E0F02FD6A95E00724AA3 /* voice_to_text.app */;
@@ -202,6 +218,10 @@
 			);
 			mainGroup = E0C3E0E72FD6A95E00724AA3;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E0BF57832FDAE05E00983F91 /* XCRemoteSwiftPackageReference "client-sdk-swift" */,
+				E0BF57862FDAE2E200983F91 /* XCRemoteSwiftPackageReference "components-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E0C3E0F12FD6A95E00724AA3 /* Products */;
 			projectDirPath = "";
@@ -407,11 +427,15 @@
 				DEVELOPMENT_TEAM = LSP4LMWCP5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "voice-to-text-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) uses your camera";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "$(PRODUCT_NAME) uses your microphone";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,11 +463,15 @@
 				DEVELOPMENT_TEAM = LSP4LMWCP5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "voice-to-text-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) uses your camera";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "$(PRODUCT_NAME) uses your microphone";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -585,6 +613,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E0BF57832FDAE05E00983F91 /* XCRemoteSwiftPackageReference "client-sdk-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/livekit/client-sdk-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.15.0;
+			};
+		};
+		E0BF57862FDAE2E200983F91 /* XCRemoteSwiftPackageReference "components-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/livekit/components-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E0BF57842FDAE05E00983F91 /* LiveKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0BF57832FDAE05E00983F91 /* XCRemoteSwiftPackageReference "client-sdk-swift" */;
+			productName = LiveKit;
+		};
+		E0BF57872FDAE2E200983F91 /* LiveKitComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0BF57862FDAE2E200983F91 /* XCRemoteSwiftPackageReference "components-swift" */;
+			productName = LiveKitComponents;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E0C3E0E82FD6A95E00724AA3 /* Project object */;
 }

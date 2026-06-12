@@ -6,13 +6,26 @@
 //
 
 import Combine
+import SwiftUI
 
 @MainActor
 final class AppCoordinator: ObservableObject {
 
+    static weak var shared: AppCoordinator?
+
+    @Published var activeTab: CustomTab = .home
     @Published var shouldStartSession = false
 
-    func startSession() {
+    init() {
+        Self.shared = self
+    }
+
+    func handleSiriStart() {
+        activeTab = .chats
         shouldStartSession = true
+    }
+
+    func sessionDidStart() {
+        shouldStartSession = false
     }
 }

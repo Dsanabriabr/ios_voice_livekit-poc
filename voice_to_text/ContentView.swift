@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var coordinator: AppCoordinator
     @State private var activeTab: CustomTab = .home
     @State private var isTabA: Bool = true
     var body: some View {
@@ -19,11 +20,25 @@ struct ContentView: View {
             Tab.init(value: .chats) {
                 LiveContentView()
                     .toolbarVisibility(.hidden, for: .tabBar)
+                    .environmentObject(coordinator)
             }
             Tab.init(value: .inventory) {
                 Text("Inventory")
                     .toolbarVisibility(.hidden, for: .tabBar)
             }
+        }.onReceive(
+            
+            NotificationCenter.default.publisher(
+
+                for: .startLiveKitSession
+
+            )
+
+        ) { _ in
+            Task { @MainActor in
+                coordinator.startSession()
+            }
+
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             CustomTabBarView()
@@ -101,5 +116,5 @@ extension View {
 }
 
 #Preview {
-    ContentView()
+//    ContentView(coordinator: )
 }

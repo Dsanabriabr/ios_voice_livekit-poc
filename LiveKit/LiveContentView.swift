@@ -8,16 +8,40 @@
 let wsURL = "https://smith-xgnh0ruv.livekit.cloud"
 let token = ""
 
+
 @preconcurrency import LiveKit
 import LiveKitComponents
 import SwiftUI
 
 struct LiveContentView: View {
-    @StateObject private var room: Room
 
+    @StateObject private var room: Room
+    @EnvironmentObject var coordinator: AppCoordinator
+    
     init() {
         let room = Room()
         _room = StateObject(wrappedValue: room)
+    }
+    
+    func connectToLiveKit() async {
+
+        do {
+
+            try await room.connect(
+                url: wsURL,
+                token: token,
+                connectOptions: ConnectOptions(
+                    enableMicrophone: true
+                )
+            )
+
+            try await room.localParticipant
+                .setMicrophone(enabled: true)
+
+        } catch {
+
+            print(error)
+        }
     }
     
     var body: some View {
@@ -25,16 +49,7 @@ struct LiveContentView: View {
             if room.connectionState == .disconnected {
                 Button("Connect") {
                     Task {
-                        do {
-                            try await room.connect(
-                                url: wsURL,
-                                token: token,
-                                connectOptions: ConnectOptions(enableMicrophone: true)
-                            )
-                            try await room.localParticipant.setCamera(enabled: true)
-                        } catch {
-                            print("Failed to connect to LiveKit: \(error)")
-                        }
+                        await connectToLiveKit()
                     }
                 }
             } else {
@@ -49,6 +64,16 @@ struct LiveContentView: View {
                     }
                 }
             }
+        }.onChange(of: coordinator.shouldStartSession) { _, shouldStart in
+            
+            guard shouldStart else { return }
+
+            Task {
+
+                await connectToLiveKit()
+
+            }
+
         }
         .padding()
         .environmentObject(room)

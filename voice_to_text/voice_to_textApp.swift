@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct voice_to_textApp: App {
+    
+    @StateObject
+    var coordinator = AppCoordinator()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(coordinator)
         }
     }
 }

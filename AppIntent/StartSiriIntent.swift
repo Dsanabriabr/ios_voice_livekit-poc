@@ -16,18 +16,9 @@ struct StartSiriIntent: AppIntent {
     static var openAppWhenRun: Bool = true
 
     func perform() async throws -> some IntentResult {
-
         await MainActor.run {
-            NotificationCenter.default.post(
-                name: .startLiveKitSession,
-                object: nil
-            )
+            AppCoordinator.shared?.handleSiriStart()
         }
         return .result()
     }
-}
-
-extension Notification.Name {
-    static let startLiveKitSession =
-        Notification.Name("startLiveKitSession")
 }

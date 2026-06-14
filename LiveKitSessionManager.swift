@@ -7,39 +7,42 @@
 import Combine
 import SwiftUI
 
-struct SessionEvent: Identifiable {
-    let id = UUID()
-    let timestamp: Date
-    let source: String
-    let message: String
+public  struct SessionEvent: Identifiable {
+    public let id = UUID()
+    public let timestamp: Date
+    public let source: String
+    public let message: String
 }
 
+let wsURL = "https://smith-xgnh0ruv.livekit.cloud"
+let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElRRTUyejRWVGhDWVYiLCJzdWIiOiJpb3MgYXBwIiwiZXhwIjoxNzgxNDQ2MDEwLCJuYmYiOjE3ODE0NDUxMTAsImlhdCI6MTc4MTQ0NTExMCwiaWRlbnRpdHkiOiJpb3MgYXBwIiwidmlkZW8iOnsicm9vbUpvaW4iOnRydWUsInJvb20iOiJ0ZXN0IiwiY2FuUHVibGlzaCI6dHJ1ZSwiY2FuU3Vic2NyaWJlIjp0cnVlLCJjYW5QdWJsaXNoRGF0YSI6dHJ1ZX19.Au4s5ZqxNfUuTptVk_pL8wGcHbHjbV0496a3fBbYpEw"
+
 @MainActor
-final class LiveKitSessionManager: NSObject, ObservableObject {
+public final class LiveKitSessionManager: NSObject, ObservableObject {
 
-    let room: Room
+    public let room: Room
 
-    @Published private(set) var connectionState: ConnectionState = .disconnected
-    @Published private(set) var events: [SessionEvent] = []
-    @Published private(set) var participantSummary = "No participants"
-    @Published private(set) var trackSummary = "No tracks"
-    @Published private(set) var lastError: String?
+    @Published private(set) public var connectionState: ConnectionState = .disconnected
+    @Published private(set) public var events: [SessionEvent] = []
+    @Published private(set) public var participantSummary = "No participants"
+    @Published private(set) public var trackSummary = "No tracks"
+    @Published private(set) public var lastError: String?
 
     private let maxEvents = 50
 
-    override init() {
+    public override init() {
         room = Room()
         super.init()
         room.add(delegate: self)
     }
 
-    func connect(url: String, token: String) async {
+    public func connect() async {
         lastError = nil
         log("Room", "Connecting…")
 
         do {
             try await room.connect(
-                url: url,
+                url: wsURL,
                 token: token,
                 connectOptions: ConnectOptions(enableMicrophone: true)
             )
@@ -50,7 +53,7 @@ final class LiveKitSessionManager: NSObject, ObservableObject {
         }
     }
 
-    func disconnect() async {
+    public func disconnect() async {
         log("Room", "Disconnecting…")
         await room.disconnect()
     }
@@ -119,7 +122,7 @@ final class LiveKitSessionManager: NSObject, ObservableObject {
 
 extension LiveKitSessionManager: RoomDelegate {
 
-    nonisolated func room(
+    nonisolated public func room(
         _ room: Room,
         didUpdateConnectionState connectionState: ConnectionState,
         from oldConnectionState: ConnectionState
@@ -130,7 +133,7 @@ extension LiveKitSessionManager: RoomDelegate {
         }
     }
 
-    nonisolated func roomDidConnect(_ room: Room) {
+    nonisolated public func roomDidConnect(_ room: Room) {
         Task { @MainActor in
             self.connectionState = room.connectionState
             self.registerParticipants()
@@ -138,15 +141,15 @@ extension LiveKitSessionManager: RoomDelegate {
         }
     }
 
-    nonisolated func roomIsReconnecting(_ room: Room) {
+    nonisolated public func roomIsReconnecting(_ room: Room) {
         logOnMain("Room", "Reconnecting…")
     }
 
-    nonisolated func roomDidReconnect(_ room: Room) {
+    nonisolated public func roomDidReconnect(_ room: Room) {
         logOnMain("Room", "Reconnected")
     }
 
-    nonisolated func room(_ room: Room, didFailToConnectWithError error: LiveKitError?) {
+    nonisolated public func room(_ room: Room, didFailToConnectWithError error: LiveKitError?) {
         Task { @MainActor in
             let message = error?.localizedDescription ?? "Unknown error"
             self.lastError = message
@@ -154,7 +157,7 @@ extension LiveKitSessionManager: RoomDelegate {
         }
     }
 
-    nonisolated func room(_ room: Room, didDisconnectWithError error: LiveKitError?) {
+    nonisolated public func room(_ room: Room, didDisconnectWithError error: LiveKitError?) {
         Task { @MainActor in
             self.connectionState = room.connectionState
             if let error {
@@ -168,7 +171,7 @@ extension LiveKitSessionManager: RoomDelegate {
         }
     }
 
-    nonisolated func room(_ room: Room, participantDidConnect participant: RemoteParticipant) {
+    nonisolated public func room(_ room: Room, participantDidConnect participant: RemoteParticipant) {
         Task { @MainActor in
             participant.add(delegate: self)
             self.refreshParticipantSummary()
@@ -177,7 +180,7 @@ extension LiveKitSessionManager: RoomDelegate {
         }
     }
 
-    nonisolated func room(_ room: Room, participantDidDisconnect participant: RemoteParticipant) {
+    nonisolated public func room(_ room: Room, participantDidDisconnect participant: RemoteParticipant) {
         Task { @MainActor in
             self.refreshParticipantSummary()
             self.refreshTrackSummary()
@@ -186,7 +189,7 @@ extension LiveKitSessionManager: RoomDelegate {
         }
     }
 
-    nonisolated func room(
+    nonisolated public func room(
         _ room: Room,
         participant: LocalParticipant,
         didPublishTrack publication: LocalTrackPublication
@@ -197,7 +200,7 @@ extension LiveKitSessionManager: RoomDelegate {
         }
     }
 
-    nonisolated func room(
+    nonisolated public func room(
         _ room: Room,
         participant: RemoteParticipant,
         didPublishTrack publication: RemoteTrackPublication
@@ -209,7 +212,7 @@ extension LiveKitSessionManager: RoomDelegate {
         }
     }
 
-    nonisolated func room(
+    nonisolated public func room(
         _ room: Room,
         participant: RemoteParticipant,
         didSubscribeTrack publication: RemoteTrackPublication
@@ -226,21 +229,21 @@ extension LiveKitSessionManager: RoomDelegate {
 
 extension LiveKitSessionManager: ParticipantDelegate {
 
-    nonisolated func participant(_ participant: Participant, didUpdateIsSpeaking isSpeaking: Bool) {
+    nonisolated public func participant(_ participant: Participant, didUpdateIsSpeaking isSpeaking: Bool) {
         Task { @MainActor in
             let name = participant.identity?.stringValue ?? participant.name ?? "participant"
             self.log("Participant", "\(name) speaking: \(isSpeaking)")
         }
     }
 
-    nonisolated func participant(_ participant: Participant, didUpdateState state: ParticipantState) {
+    nonisolated public func participant(_ participant: Participant, didUpdateState state: ParticipantState) {
         Task { @MainActor in
             let name = participant.identity?.stringValue ?? participant.name ?? "participant"
             self.log("Participant", "\(name) state: \(state)")
         }
     }
 
-    nonisolated func participant(
+    nonisolated public func participant(
         _ participant: Participant,
         didUpdateConnectionQuality connectionQuality: ConnectionQuality
     ) {
@@ -250,7 +253,7 @@ extension LiveKitSessionManager: ParticipantDelegate {
         }
     }
 
-    nonisolated func participant(
+    nonisolated public func participant(
         _ participant: Participant,
         trackPublication: TrackPublication,
         didUpdateIsMuted isMuted: Bool
@@ -267,7 +270,7 @@ extension LiveKitSessionManager: ParticipantDelegate {
 
 extension LiveKitSessionManager: TrackDelegate {
 
-    nonisolated func track(_ track: VideoTrack, didUpdateDimensions dimensions: Dimensions?) {
+    nonisolated public func track(_ track: VideoTrack, didUpdateDimensions dimensions: Dimensions?) {
         Task { @MainActor in
             if let dimensions {
                 self.log("Track", "Video dimensions: \(dimensions.width)×\(dimensions.height)")
@@ -277,7 +280,7 @@ extension LiveKitSessionManager: TrackDelegate {
         }
     }
 
-    nonisolated func track(
+    nonisolated public func track(
         _ track: Track,
         didUpdateStatistics statistics: TrackStatistics,
         simulcastStatistics: [VideoCodec: TrackStatistics]

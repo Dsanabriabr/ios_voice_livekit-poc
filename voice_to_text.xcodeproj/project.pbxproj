@@ -7,11 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E01DB4262FDED096000839E8 /* watch voice Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E01DB41C2FDED094000839E8 /* watch voice Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E01DB42D2FDED34F000839E8 /* LiveKit in Frameworks */ = {isa = PBXBuildFile; productRef = E01DB42C2FDED34F000839E8 /* LiveKit */; };
+		E01DB42F2FDED354000839E8 /* LiveKitComponents in Frameworks */ = {isa = PBXBuildFile; productRef = E01DB42E2FDED354000839E8 /* LiveKitComponents */; };
+		E01DB4302FDED376000839E8 /* voice_to_text.app in Resources */ = {isa = PBXBuildFile; fileRef = E0C3E0F02FD6A95E00724AA3 /* voice_to_text.app */; };
+		E01DB4422FDED569000839E8 /* livekitcore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01DB43A2FDED569000839E8 /* livekitcore.framework */; };
+		E01DB4432FDED569000839E8 /* livekitcore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E01DB43A2FDED569000839E8 /* livekitcore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E01DB4482FDED599000839E8 /* livekitcore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01DB43A2FDED569000839E8 /* livekitcore.framework */; };
+		E01DB4492FDED599000839E8 /* livekitcore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E01DB43A2FDED569000839E8 /* livekitcore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E01DB44D2FDED7E4000839E8 /* LiveKitSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01DB4162FDC73C0000839E8 /* LiveKitSessionManager.swift */; };
+		E01DB44F2FDED978000839E8 /* LiveKit in Frameworks */ = {isa = PBXBuildFile; productRef = E01DB44E2FDED978000839E8 /* LiveKit */; };
+		E01DB4512FDED97D000839E8 /* LiveKitComponents in Frameworks */ = {isa = PBXBuildFile; productRef = E01DB4502FDED97D000839E8 /* LiveKitComponents */; };
 		E0BF57852FDAE05E00983F91 /* LiveKit in Frameworks */ = {isa = PBXBuildFile; productRef = E0BF57842FDAE05E00983F91 /* LiveKit */; };
 		E0BF57882FDAE2E200983F91 /* LiveKitComponents in Frameworks */ = {isa = PBXBuildFile; productRef = E0BF57872FDAE2E200983F91 /* LiveKitComponents */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E01DB4242FDED096000839E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0C3E0E82FD6A95E00724AA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E01DB41B2FDED094000839E8;
+			remoteInfo = "watch voice Watch App";
+		};
+		E01DB4312FDED376000839E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0C3E0E82FD6A95E00724AA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0C3E0EF2FD6A95E00724AA3;
+			remoteInfo = voice_to_text;
+		};
+		E01DB4332FDED390000839E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0C3E0E82FD6A95E00724AA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0C3E0EF2FD6A95E00724AA3;
+			remoteInfo = voice_to_text;
+		};
+		E01DB4402FDED569000839E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0C3E0E82FD6A95E00724AA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E01DB4392FDED569000839E8;
+			remoteInfo = livekitcore;
+		};
+		E01DB44A2FDED599000839E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0C3E0E82FD6A95E00724AA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E01DB4392FDED569000839E8;
+			remoteInfo = livekitcore;
+		};
 		E0C3E0FE2FD6A96000724AA3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E0C3E0E82FD6A95E00724AA3 /* Project object */;
@@ -28,7 +74,46 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E01DB42A2FDED096000839E8 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E01DB4262FDED096000839E8 /* watch voice Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E01DB4472FDED569000839E8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E01DB4432FDED569000839E8 /* livekitcore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E01DB44C2FDED599000839E8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E01DB4492FDED599000839E8 /* livekitcore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		E01DB4162FDC73C0000839E8 /* LiveKitSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveKitSessionManager.swift; sourceTree = "<group>"; };
+		E01DB41C2FDED094000839E8 /* watch voice Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watch voice Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E01DB43A2FDED569000839E8 /* livekitcore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = livekitcore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C3E0F02FD6A95E00724AA3 /* voice_to_text.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = voice_to_text.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C3E0FD2FD6A96000724AA3 /* voice_to_textTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = voice_to_textTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C3E1072FD6A96000724AA3 /* voice_to_textUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = voice_to_textUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +123,16 @@
 		E01DB40C2FDBC89F000839E8 /* AppIntent */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = AppIntent;
+			sourceTree = "<group>";
+		};
+		E01DB41D2FDED094000839E8 /* watch voice Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "watch voice Watch App";
+			sourceTree = "<group>";
+		};
+		E01DB43B2FDED569000839E8 /* livekitcore */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = livekitcore;
 			sourceTree = "<group>";
 		};
 		E03757CD2FDAD69B00152747 /* LiveKit */ = {
@@ -68,11 +163,31 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E01DB4192FDED094000839E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E01DB42D2FDED34F000839E8 /* LiveKit in Frameworks */,
+				E01DB4482FDED599000839E8 /* livekitcore.framework in Frameworks */,
+				E01DB42F2FDED354000839E8 /* LiveKitComponents in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E01DB4372FDED569000839E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E01DB44F2FDED978000839E8 /* LiveKit in Frameworks */,
+				E01DB4512FDED97D000839E8 /* LiveKitComponents in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E0C3E0ED2FD6A95E00724AA3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E0BF57852FDAE05E00983F91 /* LiveKit in Frameworks */,
+				E01DB4422FDED569000839E8 /* livekitcore.framework in Frameworks */,
 				E0BF57882FDAE2E200983F91 /* LiveKitComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +209,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E01DB42B2FDED34F000839E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E01DB4162FDC73C0000839E8 /* LiveKitSessionManager.swift */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E0C3E0E72FD6A95E00724AA3 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +226,9 @@
 				E0C3E0F22FD6A95E00724AA3 /* voice_to_text */,
 				E0C3E1002FD6A96000724AA3 /* voice_to_textTests */,
 				E0C3E10A2FD6A96000724AA3 /* voice_to_textUITests */,
+				E01DB41D2FDED094000839E8 /* watch voice Watch App */,
+				E01DB43B2FDED569000839E8 /* livekitcore */,
+				E01DB42B2FDED34F000839E8 /* Frameworks */,
 				E0C3E0F12FD6A95E00724AA3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,13 +239,78 @@
 				E0C3E0F02FD6A95E00724AA3 /* voice_to_text.app */,
 				E0C3E0FD2FD6A96000724AA3 /* voice_to_textTests.xctest */,
 				E0C3E1072FD6A96000724AA3 /* voice_to_textUITests.xctest */,
+				E01DB41C2FDED094000839E8 /* watch voice Watch App.app */,
+				E01DB43A2FDED569000839E8 /* livekitcore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		E01DB4352FDED569000839E8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		E01DB41B2FDED094000839E8 /* watch voice Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E01DB4272FDED096000839E8 /* Build configuration list for PBXNativeTarget "watch voice Watch App" */;
+			buildPhases = (
+				E01DB4182FDED094000839E8 /* Sources */,
+				E01DB4192FDED094000839E8 /* Frameworks */,
+				E01DB41A2FDED094000839E8 /* Resources */,
+				E01DB44C2FDED599000839E8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E01DB4322FDED376000839E8 /* PBXTargetDependency */,
+				E01DB4342FDED390000839E8 /* PBXTargetDependency */,
+				E01DB44B2FDED599000839E8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E01DB41D2FDED094000839E8 /* watch voice Watch App */,
+			);
+			name = "watch voice Watch App";
+			packageProductDependencies = (
+				E01DB42C2FDED34F000839E8 /* LiveKit */,
+				E01DB42E2FDED354000839E8 /* LiveKitComponents */,
+			);
+			productName = "watch voice Watch App";
+			productReference = E01DB41C2FDED094000839E8 /* watch voice Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E01DB4392FDED569000839E8 /* livekitcore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E01DB4442FDED569000839E8 /* Build configuration list for PBXNativeTarget "livekitcore" */;
+			buildPhases = (
+				E01DB4352FDED569000839E8 /* Headers */,
+				E01DB4362FDED569000839E8 /* Sources */,
+				E01DB4372FDED569000839E8 /* Frameworks */,
+				E01DB4382FDED569000839E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E01DB43B2FDED569000839E8 /* livekitcore */,
+			);
+			name = livekitcore;
+			packageProductDependencies = (
+				E01DB44E2FDED978000839E8 /* LiveKit */,
+				E01DB4502FDED97D000839E8 /* LiveKitComponents */,
+			);
+			productName = livekitcore;
+			productReference = E01DB43A2FDED569000839E8 /* livekitcore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		E0C3E0EF2FD6A95E00724AA3 /* voice_to_text */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0C3E1112FD6A96000724AA3 /* Build configuration list for PBXNativeTarget "voice_to_text" */;
@@ -127,10 +318,14 @@
 				E0C3E0EC2FD6A95E00724AA3 /* Sources */,
 				E0C3E0ED2FD6A95E00724AA3 /* Frameworks */,
 				E0C3E0EE2FD6A95E00724AA3 /* Resources */,
+				E01DB42A2FDED096000839E8 /* Embed Watch Content */,
+				E01DB4472FDED569000839E8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E01DB4252FDED096000839E8 /* PBXTargetDependency */,
+				E01DB4412FDED569000839E8 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				E01DB40C2FDBC89F000839E8 /* AppIntent */,
@@ -203,6 +398,12 @@
 				LastSwiftUpdateCheck = 2630;
 				LastUpgradeCheck = 2630;
 				TargetAttributes = {
+					E01DB41B2FDED094000839E8 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					E01DB4392FDED569000839E8 = {
+						CreatedOnToolsVersion = 26.3;
+					};
 					E0C3E0EF2FD6A95E00724AA3 = {
 						CreatedOnToolsVersion = 26.3;
 					};
@@ -237,11 +438,28 @@
 				E0C3E0EF2FD6A95E00724AA3 /* voice_to_text */,
 				E0C3E0FC2FD6A96000724AA3 /* voice_to_textTests */,
 				E0C3E1062FD6A96000724AA3 /* voice_to_textUITests */,
+				E01DB41B2FDED094000839E8 /* watch voice Watch App */,
+				E01DB4392FDED569000839E8 /* livekitcore */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E01DB41A2FDED094000839E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E01DB4302FDED376000839E8 /* voice_to_text.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E01DB4382FDED569000839E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E0C3E0EE2FD6A95E00724AA3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,6 +484,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E01DB4182FDED094000839E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E01DB4362FDED569000839E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E01DB44D2FDED7E4000839E8 /* LiveKitSessionManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E0C3E0EC2FD6A95E00724AA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +523,31 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E01DB4252FDED096000839E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E01DB41B2FDED094000839E8 /* watch voice Watch App */;
+			targetProxy = E01DB4242FDED096000839E8 /* PBXContainerItemProxy */;
+		};
+		E01DB4322FDED376000839E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0C3E0EF2FD6A95E00724AA3 /* voice_to_text */;
+			targetProxy = E01DB4312FDED376000839E8 /* PBXContainerItemProxy */;
+		};
+		E01DB4342FDED390000839E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0C3E0EF2FD6A95E00724AA3 /* voice_to_text */;
+			targetProxy = E01DB4332FDED390000839E8 /* PBXContainerItemProxy */;
+		};
+		E01DB4412FDED569000839E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E01DB4392FDED569000839E8 /* livekitcore */;
+			targetProxy = E01DB4402FDED569000839E8 /* PBXContainerItemProxy */;
+		};
+		E01DB44B2FDED599000839E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E01DB4392FDED569000839E8 /* livekitcore */;
+			targetProxy = E01DB44A2FDED599000839E8 /* PBXContainerItemProxy */;
+		};
 		E0C3E0FF2FD6A96000724AA3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E0C3E0EF2FD6A95E00724AA3 /* voice_to_text */;
@@ -303,6 +561,170 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		E01DB4282FDED096000839E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LSP4LMWCP5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "watch voice";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "ds.digitalservices.voice-to-text";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ds.digitalservices.voice-to-text.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		E01DB4292FDED096000839E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LSP4LMWCP5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "watch voice";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "ds.digitalservices.voice-to-text";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ds.digitalservices.voice-to-text.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		E01DB4452FDED569000839E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LSP4LMWCP5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = ds.digitalservices.livekitcore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,4";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		E01DB4462FDED569000839E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LSP4LMWCP5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = ds.digitalservices.livekitcore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,4";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
 		E0C3E10F2FD6A96000724AA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -585,6 +1007,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E01DB4272FDED096000839E8 /* Build configuration list for PBXNativeTarget "watch voice Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E01DB4282FDED096000839E8 /* Debug */,
+				E01DB4292FDED096000839E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E01DB4442FDED569000839E8 /* Build configuration list for PBXNativeTarget "livekitcore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E01DB4452FDED569000839E8 /* Debug */,
+				E01DB4462FDED569000839E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E0C3E0EB2FD6A95E00724AA3 /* Build configuration list for PBXProject "voice_to_text" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -643,6 +1083,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E01DB42C2FDED34F000839E8 /* LiveKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0BF57832FDAE05E00983F91 /* XCRemoteSwiftPackageReference "client-sdk-swift" */;
+			productName = LiveKit;
+		};
+		E01DB42E2FDED354000839E8 /* LiveKitComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0BF57862FDAE2E200983F91 /* XCRemoteSwiftPackageReference "components-swift" */;
+			productName = LiveKitComponents;
+		};
+		E01DB44E2FDED978000839E8 /* LiveKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0BF57832FDAE05E00983F91 /* XCRemoteSwiftPackageReference "client-sdk-swift" */;
+			productName = LiveKit;
+		};
+		E01DB4502FDED97D000839E8 /* LiveKitComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0BF57862FDAE2E200983F91 /* XCRemoteSwiftPackageReference "components-swift" */;
+			productName = LiveKitComponents;
+		};
 		E0BF57842FDAE05E00983F91 /* LiveKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E0BF57832FDAE05E00983F91 /* XCRemoteSwiftPackageReference "client-sdk-swift" */;

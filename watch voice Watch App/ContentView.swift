@@ -1,8 +1,8 @@
 //
-//  live.swift
-//  voice_to_text
+//  ContentView.swift
+//  watch voice Watch App
 //
-//  Created by Daniel Sanabria on 11/06/26.
+//  Created by Daniel Sanabria on 14/06/26.
 //
 
 import LiveKitComponents
@@ -10,7 +10,7 @@ import LiveKitComponents
 import SwiftUI
 import livekitcore
 
-struct LiveContentView: View {
+struct ContentView: View {
 
     @StateObject private var session = LiveKitSessionManager()
     @EnvironmentObject var coordinator: AppCoordinator
@@ -21,7 +21,7 @@ struct LiveContentView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 HStack {
-                    connectionStatusSection
+//                    connectionStatusSection
                     Spacer()
                     if session.connectionState == .disconnected {
                         Button("Connect") {
@@ -35,10 +35,6 @@ struct LiveContentView: View {
                         .buttonStyle(.bordered)
                     }
                 }
-                
-                participantSection
-                trackSection
-                eventsSection
 
                 if session.connectionState != .disconnected {
                     LazyVStack {
@@ -68,7 +64,7 @@ struct LiveContentView: View {
         .padding()
         .environmentObject(room)
     }
-
+    
     private var connectionStatusSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Connection")
@@ -91,59 +87,7 @@ struct LiveContentView: View {
         .padding()
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12))
     }
-
-    private var participantSection: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text("Participants")
-                .font(.headline)
-            Text(session.participantSummary)
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-        }
-        .padding()
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12))
-    }
-
-    private var trackSection: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text("Tracks")
-                .font(.headline)
-            Text(session.trackSummary)
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-        }
-        .padding()
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12))
-    }
-
-    private var eventsSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("Activity")
-                .font(.headline)
-
-            if session.events.isEmpty {
-                Text("Waiting for room events…")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-            } else {
-                ForEach(session.events) { event in
-                    HStack(alignment: .top, spacing: 8) {
-                        Text(event.source)
-                            .font(.caption2.weight(.semibold))
-                            .foregroundStyle(.teal)
-                            .frame(width: 72, alignment: .leading)
-                        Text(event.message)
-                            .font(.caption)
-                            .foregroundStyle(.primary)
-                        Spacer(minLength: 0)
-                    }
-                }
-            }
-        }
-        .padding()
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12))
-    }
-
+    
     private var connectionLabel: String {
         switch session.connectionState {
         case .disconnected: return "Disconnected"
@@ -164,4 +108,8 @@ struct LiveContentView: View {
         @unknown default: return .gray
         }
     }
+}
+
+#Preview {
+    ContentView()
 }
